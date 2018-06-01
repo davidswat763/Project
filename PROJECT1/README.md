@@ -30,7 +30,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 Comand install Angular modules
 
-npm install -g @angular/cli
+npm install -g @angular/cli or npm install
 
 ng new Project
 
