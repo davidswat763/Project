@@ -10,17 +10,17 @@ export class TiendaComponent implements OnInit {
   public nombreDelParque: String;
   public miParque;
 
-  constructor() { 
-    this.titulo = "Esta es la Tienda Angular";
+  constructor() {
+    this.titulo = 'Esta es la Tienda Angular';
   }
 
   ngOnInit() {
   }
 
-  mostrarNombre(){
+  mostrarNombre() {
     // console.log(this.nombreDelParque);
   }
-  verDatosParque(event){
+  verDatosParque(event) {
     console.log(event);
     this.miParque = event;
   }

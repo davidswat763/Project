@@ -1,12 +1,13 @@
-import { Component, OnInit, Input, Output, EventEmitter, OnChanges, SimpleChanges, DoCheck } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnChanges, SimpleChanges, DoCheck, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-parques',
   templateUrl: './parques.component.html',
   styleUrls: ['./parques.component.css']
 })
-export class ParquesComponent implements OnChanges, OnInit, DoCheck {
+export class ParquesComponent implements OnChanges, OnInit, DoCheck, OnDestroy {
   @Input() nombre: String;
+  // tslint:disable-next-line:no-input-rename
   @Input('metros_cuadrados') metros: number;
   public vegetacion: String;
   public abierto: Boolean;
@@ -32,8 +33,13 @@ export class ParquesComponent implements OnChanges, OnInit, DoCheck {
     console.log('Metodo OnInit Lanzado');
   }
   ngDoCheck() {
-    //Despues de OnInit y del Changes
+    // Despues de OnInit y del Changes
     console.log('El DoCheck ejecutado');
+  }
+  ngOnDestroy() {
+    // Justo antes que se elimine un Componente o destruya la directiva de Componentes.
+    // Podemos eliminar variables, metodos o vaciar.
+    console.log('Se va a eliminar el componente');
   }
 
   emitirEvento() {
@@ -43,7 +49,6 @@ export class ParquesComponent implements OnChanges, OnInit, DoCheck {
       'metros': this.metros,
       'vegetacion': this.vegetacion,
       'abierto': this.abierto,
-    })
+    });
   }
-
 }
