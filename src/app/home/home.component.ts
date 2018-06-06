@@ -10,7 +10,7 @@ export class HomeComponent implements OnInit {
   public titulo: string;
 
   constructor() {
-    this.titulo = 'HOME';
+    this.titulo = 'BIENVENIDO A NGZOO';
   }
 
   ngOnInit() {

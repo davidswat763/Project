@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { routing, appRoutingProviders } from './app.routing';
+import { EditorModule } from '@tinymce/tinymce-angular';
 
 import { AppComponent } from './app.component';
 import { TiendaComponent } from './tienda/tienda.component';
@@ -26,7 +27,8 @@ import { ContactComponent } from './contact/contact.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    routing
+    routing,
+    EditorModule
   ],
   providers: [
     appRoutingProviders
