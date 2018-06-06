@@ -22,7 +22,7 @@ export class TiendaComponent implements OnInit {
       $('#textojq').slideToggle();
     });
 
-    $('#caja').dotdotdot();
+    jQuery('#caja').dotdotdot();
   }
 
   mostrarNombre() {
