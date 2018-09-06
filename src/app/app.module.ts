@@ -1,38 +1,47 @@
+import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
-import { routing, appRoutingProviders } from './app.routing';
-import { EditorModule } from '@tinymce/tinymce-angular';
+import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { MyApp } from './app.component';
 
-import { AppComponent } from './app.component';
-import { TiendaComponent } from './tienda/tienda.component';
-import { ParquesComponent } from './parques/parques.component';
-import { AnimalsComponent } from './animals/animals.component';
-import { HomeComponent } from './home/home.component';
-import { KeeperComponent } from './keeper/keeper.component';
-import { ContactComponent } from './contact/contact.component';
+import { GooglePlus } from '@ionic-native/google-plus';
+
+import { TabsPage } from '../pages/tabs/tabs';
+import { StatusBar } from '@ionic-native/status-bar';
+import { SplashScreen } from '@ionic-native/splash-screen';
+
+import { PromoPageModule } from '../pages/promo/promo.module';
+import { MapsPageModule } from '../pages/maps/maps.module';
+import { PricePageModule } from '../pages/price/price.module';
+import { FilterPageModule } from '../pages/filter/filter.module';
+import { LoginPageModule } from '../pages/login/login.module';
+import { RegisterPageModule } from '../pages/register/register.module';
+
 
 @NgModule({
   declarations: [
-    AppComponent,
-    TiendaComponent,
-    ParquesComponent,
-    AnimalsComponent,
-    HomeComponent,
-    KeeperComponent,
-    ContactComponent
+    MyApp,
+    TabsPage
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    HttpModule,
-    routing,
-    EditorModule
+    IonicModule.forRoot(MyApp),
+    PromoPageModule,
+    MapsPageModule,
+    PricePageModule,
+    FilterPageModule,
+    LoginPageModule,
+    RegisterPageModule
+  ],
+  bootstrap: [IonicApp],
+  entryComponents: [
+    MyApp,
+    TabsPage
   ],
   providers: [
-    appRoutingProviders
-  ],
-  bootstrap: [AppComponent]
+    GooglePlus,
+    StatusBar,
+    SplashScreen,
+    {provide: ErrorHandler, useClass: IonicErrorHandler}
+  ]
 })
-export class AppModule { }
+export class AppModule {}
